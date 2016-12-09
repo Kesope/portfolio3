@@ -1,0 +1,13 @@
+﻿<ul class="list-group" data-bind="foreach: posts">
+    <li data-bind="text: $data.total"></li>
+    <li data-bind="text: $data.prev"></li>
+    <li data-bind="text: $data.next"></li>
+    <ui data-bind="foreach:data">
+        <li data-bind="text: $data.url"></li>
+        <li data-bind="text: $data.id"></li>
+        <li data-bind="text: $data.title"></li>
+        <li data-bind="text: $data.score"></li>
+        <li data-bind="text: $data.body"></li>
+    </ui>
+</ul>
+

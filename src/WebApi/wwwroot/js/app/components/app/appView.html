@@ -1,0 +1,49 @@
+﻿<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">SOVA portfolio</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" data-bind="value: searchString">
+                </div>
+                <button type="submit" class="btn btn-default" data-bind="click: searchPost">Search</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right" data-bind="foreach: menuItems">
+                <li data-bind="css: {active: $parent.isSelected($data)}">
+                    <a href="#" data-bind="click: $parent.selectMenu">
+                        <span data-bind="text: title"></span>
+                    </a>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<div data-bind="template: view"></div>
+<script type="text/html" id="default">
+</script>
+<script type="text/html" id="searchresult">
+    <table class="table table-striped">
+        <tbody data-bind="foreach: searchResult">
+            <tr>
+                <td style="font-size:large" data-bind="html: title"></td>
+            </tr>
+            <tr>
+                <td data-bind="html: body"></td>
+            </tr>
+        </tbody>
+    </table>
+</script>
+
+<div data-bind="component: currentComponent"></div>
